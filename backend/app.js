@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 
 app.use(
   session({
-    secret: process.env.SESSIONSECRET,
+    secret: key,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false },
@@ -28,8 +28,8 @@ app.use(passport.session());
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.ID,
-      clientSecret: process.env.SECRET,
+      clientID:"417381029367-7r3clh7plog7q44ffg8nofm636n51kn7.apps.googleusercontent.com",
+      clientSecret:"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",
       callbackURL: "http://localhost:4000/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, cb) {
